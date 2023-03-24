@@ -2,8 +2,8 @@
 #get_String accept a string from the user and print_String print the string in upper case
 
 class String_me():
-    def __init__(self):
-        self.string1 = ''
+    def __init__(self, str1=''):
+        self.string1 = str1
 
     def get_String(self):
         self.string1 = input("\nGimme a string! Make it cheesy~ \n")
@@ -17,3 +17,6 @@ class String_me():
 travii = String_me()
 travii.get_String()
 travii.print_String()
+
+yve = String_me('love is blind')
+yve.print_String()
