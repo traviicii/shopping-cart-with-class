@@ -27,7 +27,7 @@ class Shoppingcart():
                 price = float(self.products[item][1]) * float(self.products[item][0])  
                 total += price
                 if item == "ranch dressing":
-                    print(f"{item.title()} --------- ${self.products[item][1]}")
+                    print(f"{item.title()}, Qty: {int(self.products[item][0])} --------- ${self.products[item][1]}")
                 else:
                     print(f"{item.title()}, Qty: {int(self.products[item][0])} --------- ${round(price, 2)}")
         print("******************************")
@@ -61,7 +61,7 @@ class Shoppingcart():
         if additem not in self.products:
             number = input("\nWow we don't even have this product, but we'll sell it to you anyways!\nEnter the price. And don't put a $, we'll do that for you. ")
             if "$" in number:
-                print("How dare you add a '$' when we specifically told you not to. You can head right back tot he main menu playing games like that.")
+                print("How dare you add a '$' when we specifically told you not to. You can head right back to the main menu playing games like that.")
                 #continue
             else:
                 self.products[additem] = [input("How many are you buying? "), number]
