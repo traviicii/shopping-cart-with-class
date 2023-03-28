@@ -58,7 +58,7 @@ class Shoppingcart():
     
     def addItem(self):
         additem = input("\nWhat item would you like to add? ")
-        if additem not in self.products:
+        if additem.lower() not in self.products:
             number = input("\nWow we don't even have this product, but we'll sell it to you anyways!\nEnter the price. And don't put a $, we'll do that for you. ")
             if "$" in number:
                 print("How dare you add a '$' when we specifically told you not to. You can head right back to the main menu playing games like that.")
@@ -67,11 +67,11 @@ class Shoppingcart():
                 self.products[additem] = [input("How many are you buying? "), number]
 
         elif additem.lower() in self.products:
-            self.products[additem][0] = input("How many? ")
+            self.products[additem.lower()][0] = input("How many? ")
     
     def removeItem(self):
         item = input("\nWhat item would you like to remove from your cart? ")   #assigns item to be romoved
-        if item not in self.products.keys() or int(self.products[item][0]) == 0:    #catches error if item wasn't added initially
+        if item.lower() not in self.products.keys() or int(self.products[item.lower()][0]) == 0:    #catches error if item wasn't added initially
             print("Yo, that's not even in your cart. How you gonna try and remove it, son?")
             #assigns item to be removed
                 
